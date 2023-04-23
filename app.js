@@ -25,25 +25,25 @@ button.addEventListener('click', () => {
   fetch(apiUrl)
     .then(response => response.json())
     .then(data => {
+      const cat = data[0];
+
+      const img = document.createElement('img');
+      img.src = cat.url;
       catImageContainer.innerHTML = '';
+      catImageContainer.appendChild(img);
+
+      const p = document.createElement('p');
+      p.textContent = cat.breeds.length > 0 ? cat.breeds[0].name : "Cat";
       catBreedContainer.innerHTML = '';
+      catBreedContainer.appendChild(p);
 
-      data.forEach(cat => {
-        const img = document.createElement('img');
-        img.src = cat.url;
-        catImageContainer.appendChild(img);
-
-        const p = document.createElement('p');
-        p.textContent = cat.breeds.length > 0 ? cat.breeds[0].name : "Cat";
-        catBreedContainer.appendChild(p);
-
-	  fetchRandomFunFact();
-      });
+      fetchRandomFunFact();
     })
     .catch(error => {
       console.log('Error:', error);
     });
 });
+
 
 button.addEventListener('mouseover', () => {
     customCursor.classList.add('hover');
