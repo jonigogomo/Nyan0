@@ -145,10 +145,10 @@ img {
   font-size: 16px;
   color: #87ceeb;
   margin-top: 10px;
-  align-items: center;
   text-align: justified;
   vertical-align: middle;
   padding-top: 20px;
+  background-color: #f8f8f8; 
 }
 
 #cat-fun-fact-wrapper {
