@@ -20,6 +20,8 @@ button.addEventListener('click', () => {
     firstClick = false;
   }  
 
+document.querySelector('.fixed-container').classList.add('fixed');
+
   catFunFactWrapper.style.display = 'block';
 
   fetch(apiUrl)
