@@ -25,6 +25,22 @@
 }
 
 
+
+.centered-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+
+.fixed-container {
+  display: flex;
+  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+}
+
+
 body {
     margin: 0;
     padding: 0;
@@ -154,15 +170,3 @@ img {
 }
 
 
-.centered-container {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-
-.fixed-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
