@@ -11,12 +11,14 @@ const catFunFactWrapper = document.querySelector('#cat-fun-fact-wrapper');
 const catFunFactContainer = document.querySelector('#cat-fun-fact-container');
 
 let musicMuted = false;
+let firstClick = true;
 	
 button.addEventListener('click', () => {
-  if (!musicMuted && !backgroundMusic.paused) {
+  if (!musicMuted && firstClick) {
     backgroundMusic.volume = 0.3;
     backgroundMusic.play();
-  }	  
+    firstClick = false;
+  }  
 
   catFunFactWrapper.style.display = 'block';
 
