@@ -22,27 +22,29 @@ button.addEventListener('click', () => {
 
   catFunFactWrapper.style.display = 'block';
 
-  fetch(apiUrl)
+fetch(apiUrl)
     .then(response => response.json())
     .then(data => {
-      const cat = data[0];
-
-      const img = document.createElement('img');
-      img.src = cat.url;
       catImageContainer.innerHTML = '';
-      catImageContainer.appendChild(img);
-
-      const p = document.createElement('p');
-      p.textContent = cat.breeds.length > 0 ? cat.breeds[0].name : "Cat";
       catBreedContainer.innerHTML = '';
-      catBreedContainer.appendChild(p);
 
-      fetchRandomFunFact();
+      data.forEach(cat => {
+        const img = document.createElement('img');
+        img.src = cat.url;
+        catImageContainer.appendChild(img);
+
+        const p = document.createElement('p');
+        p.textContent = cat.breeds.length > 0 ? cat.breeds[0].name : "Cat";
+        catBreedContainer.appendChild(p);
+
+	  fetchRandomFunFact();
+      });
     })
     .catch(error => {
       console.log('Error:', error);
     });
 });
+
 
 
 button.addEventListener('mouseover', () => {
@@ -69,21 +71,18 @@ stopMusicButton.addEventListener('mouseout', () => {
     customCursor.classList.remove('hover');
 });
 
+
 function fetchRandomFunFact() {
   fetch(catFactUrl)
     .then(response => response.json())
     .then(data => {
-      const fact = data.fact;
-
-      const p = document.createElement('p');
-      p.textContent = fact;
-      catFunFactContainer.innerHTML = '';
-      catFunFactContainer.appendChild(p);
+      catFunFactContainer.innerHTML = data.fact;
     })
     .catch(error => {
       console.log('Error:', error);
     });
 }
+
 
 const customCursor = document.getElementById('custom-cursor');
 
@@ -107,5 +106,6 @@ document.addEventListener('mousedown', () => {
 document.addEventListener('mouseup', () => {
     customCursor.classList.remove('clicked');
 });
+
 
 
