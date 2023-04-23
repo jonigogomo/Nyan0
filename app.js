@@ -10,6 +10,7 @@ const catBreedContainer = document.querySelector('#cat-breed-container');
 const catFunFactWrapper = document.querySelector('#cat-fun-fact-wrapper');
 const catFunFactContainer = document.querySelector('#cat-fun-fact-container');
 
+let musicStarted = false;
 
 button.addEventListener('click', () => {
   backgroundMusic.volume = 0.3;
