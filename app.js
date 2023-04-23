@@ -10,13 +10,13 @@ const catBreedContainer = document.querySelector('#cat-breed-container');
 const catFunFactWrapper = document.querySelector('#cat-fun-fact-wrapper');
 const catFunFactContainer = document.querySelector('#cat-fun-fact-container');
 
-let musicStarted = false;
+let musicMuted = false;
 	
 button.addEventListener('click', () => {
-  if (!musicStarted) {
+  if (!musicMuted && !backgroundMusic.paused) {
     backgroundMusic.volume = 0.3;
     backgroundMusic.play();
-    musicStarted = true;
+  }	  
 
   catFunFactWrapper.style.display = 'block';
 
@@ -56,6 +56,7 @@ const stopMusicButton = document.querySelector('#stop-music-button');
 
 stopMusicButton.addEventListener('click', () => {
     backgroundMusic.pause();
+    musicMuted = true;
 });
 
 stopMusicButton.addEventListener('mouseover', () => {
@@ -65,7 +66,6 @@ stopMusicButton.addEventListener('mouseover', () => {
 stopMusicButton.addEventListener('mouseout', () => {
     customCursor.classList.remove('hover');
 });
-
 
 function fetchRandomFunFact() {
   fetch(catFactUrl)
