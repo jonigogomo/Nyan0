@@ -149,7 +149,6 @@ img {
   text-align: justified;
   vertical-align: middle;
   padding-top: 20px;
-  background-color: #1e90ff;
 }
 
 #cat-fun-fact-wrapper {
@@ -160,6 +159,7 @@ img {
   width: 700px; 
   height: 150px; 
   overflow: auto; 
+  background-color: #1e90ff;
 }
 
 
