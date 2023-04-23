@@ -88,12 +88,12 @@ document.addEventListener('mousemove', (event) => {
     customCursor.style.top = `${event.clientY}px`;
 });
 
-document.addEventListener('mouseenter', () => {
-    customCursor.style.display = 'block';
+document.addEventListener('mouseover', () => {
+  customCursor.style.display = 'block';
 });
 
-document.addEventListener('mouseleave', () => {
-    customCursor.style.display = 'none';
+document.addEventListener('mouseout', () => {
+  customCursor.style.display = 'none';
 });
 
 document.addEventListener('mousedown', () => {
