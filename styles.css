@@ -151,7 +151,6 @@ img {
 #cat-fun-fact-container {
   font-family: 'Press Start 2P', cursive;
   font-size: 16px;
-  background-color: #4169e1;
   color: #87ceeb;
   margin-top: 10px;
   align-items: center;
@@ -168,6 +167,7 @@ img {
   width: 700px; 
   height: 150px; 
   overflow: auto; 
+  background-color: rgba(173, 216, 230, 0.8);
 }
 
 
