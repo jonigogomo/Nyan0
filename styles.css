@@ -154,6 +154,13 @@ img {
 }
 
 
+.centered-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+
 .fixed-container {
   display: flex;
   flex-direction: column;
