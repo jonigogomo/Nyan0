@@ -73,13 +73,17 @@ function fetchRandomFunFact() {
   fetch(catFactUrl)
     .then(response => response.json())
     .then(data => {
-      catFunFactContainer.innerHTML = data.fact;
+      const fact = data.fact;
+
+      const p = document.createElement('p');
+      p.textContent = fact;
+      catFunFactContainer.innerHTML = '';
+      catFunFactContainer.appendChild(p);
     })
     .catch(error => {
       console.log('Error:', error);
     });
 }
-
 
 const customCursor = document.getElementById('custom-cursor');
 
