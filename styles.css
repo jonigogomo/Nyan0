@@ -80,6 +80,10 @@ body {
     min-height: 100vh;
 }
 
+.fixed-container {
+  position: relative;
+}
+
 h1 {
     font-family: 'Press Start 2P', cursive;
     font-size: 38px;
